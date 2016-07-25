@@ -58,5 +58,9 @@ public class CGenerica {
 		this.sta=this.conexion.createStatement();
 		this.sta.executeUpdate(consulta);
 	}
+	public void eliminar(String consulta) throws SQLException{
+		this.sta=this.conexion.createStatement();
+		this.sta.execute(consulta);
+	}
 	
 }

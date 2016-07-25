@@ -16,12 +16,12 @@
 	ResultSet rs = cg.consultar("select * from cliente");
 	if(rs.first()){
 		out.print("<table border=1><tr><th>Codigo</th><th>Nombre</th><th>Direccion</th><th>Saldo Adeudado</th><th>Estado</th><th>Operaciones</th></tr>");
-		while(rs.next()){
+		do{
 			out.print("<tr><td>"+rs.getString("codigo")+"</td><td>"+rs.getString("nombre")+"</td><td>"+rs.getString("direccion")
 			+"</td><td>"+rs.getString("saldoAdeudado")+"</td><td>"+rs.getString("estado")+"</td><td>"
 			+"<a href=\"./ConfirmarEliminar.jsp?codigo="+rs.getString("codigo")+"\">Eliminar</a> / <a href=\"./ModificarCliente.jsp?codigo="+rs.getString("codigo")+"\">Modificar</a>"
 			+"</td></tr>");
-		}
+		}while(rs.next());
 		out.print("</tabla>");
 	}else{
 		out.print("No Existen clientes");

@@ -7,10 +7,12 @@
 <title>Eliminar Cliente</title>
 </head>
 <body>
-<form>
-	¿Eliminar Cliente? con codigo <input type=text disabled/>
+<form method=get action=EliminarCliente.jsp>
+	¿Eliminar Cliente? con codigo
+	
+	<input type=text readonly name=codigo value=<%= request.getParameter("codigo") %>	>
 	<input type=submit value=Eliminar >
-	<input type=cancel value=Cancelar >
+	<a href="./AdministrarClientes.jsp">Cancelar</a>
 </form>
 </body>
 </html>
